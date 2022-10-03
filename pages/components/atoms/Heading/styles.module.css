@@ -1,0 +1,59 @@
+.module {
+  font-weight: bold;
+}
+
+h1.module {
+  font-size: 2.4rem;
+}
+
+h2.module {
+  font-size: 1.8rem;
+}
+
+h3.module {
+  font-size: 1.6rem;
+}
+
+h4.module {
+  font-size: 1.4rem;
+}
+
+h5.module {
+  font-size: 1.2rem;
+}
+
+h6.module {
+  font-size: 1.2rem;
+}
+
+.module[data-size="24"] {
+  font-size: 2.4rem;
+}
+
+.module[data-size="22"] {
+  font-size: 2.2rem;
+}
+
+.module[data-size="20"] {
+  font-size: 2rem;
+}
+
+.module[data-size="18"] {
+  font-size: 1.8rem;
+}
+
+.module[data-size="16"] {
+  font-size: 1.6rem;
+}
+
+.module[data-size="14"] {
+  font-size: 1.4rem;
+}
+
+.module[data-size="12"] {
+  font-size: 1.2rem;
+}
+
+.module[data-size="10"] {
+  font-size: 1rem;
+}

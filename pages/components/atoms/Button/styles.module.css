@@ -1,0 +1,61 @@
+.module {
+  display: inline-block;
+  padding: 10px 16px;
+  border-width: 0px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.module:disabled {
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.module[data-theme="primary"] {
+  color: #fff;
+  background: var(--primary-color);
+  box-shadow: inset 0px -2px 0px #1987b3, inset -1px 0px 0px #1987b3,
+    inset 1px 0px 0px #1987b3, inset 0px 1px 0px #1987b3;
+}
+
+.module[data-theme="primary"]:hover {
+  background: #4ebfea;
+}
+
+.module[data-theme="secondary"] {
+  color: #777;
+  background: #e1f0f8;
+  border: 2px solid var(--primary-color);
+}
+
+.module[data-theme="secondary"]:hover {
+  background: #f0faff;
+}
+
+.module[data-theme="normal"],
+.module[data-theme="delete"] {
+  color: #777;
+  background: #fafafa;
+  box-shadow: inset 0px -2px 0px #c7c7c7, inset -1px 0px 0px #c7c7c7,
+    inset 1px 0px 0px #c7c7c7, inset 0px 1px 0px #c7c7c7;
+}
+
+.module[data-theme="delete"] {
+  font-weight: bold;
+  color: var(--alert-color);
+}
+
+.module[data-theme="normal"]:hover,
+.module[data-theme="delete"]:hover {
+  background: #ffffff;
+}
+
+.module[data-theme="text"] {
+  color: #777;
+  background: none;
+}
+
+.module[data-theme="text"]:hover {
+  color: var(--primary-color);
+}

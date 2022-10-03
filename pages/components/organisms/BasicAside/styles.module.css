@@ -1,0 +1,11 @@
+.aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #C8F6C8;
+}
+
+.aside li {
+  font-size: 20px;
+  padding-top: 5px;
+}

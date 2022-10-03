@@ -1,8 +1,11 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import { Fragment } from 'react'
+import { AppPropsWithLayout } from './lib/next/types'
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
+    const getLayout = Component.getLayout ?? ((page) => page)
+    const Layout = Component.layout ?? Fragment
+
+    return <Layout>{getLayout(<Component {...pageProps} />)}</Layout>
 }
 
 export default MyApp

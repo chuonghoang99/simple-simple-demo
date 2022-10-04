@@ -1,29 +1,19 @@
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil'
 import { Button } from '../../atoms/Button'
+import { useGlobalContext } from '../../layout/BasicLayout2'
 import { useSystem } from '../../organisms/BasicAside/hook'
 import { changeSystem, system } from '../../organisms/BasicAside/recoil'
 
-export const RecoilDemo = () => {
-    console.log('content render')
-
-    // const [x, y] = useRecoilState(system)
-    // y('agt')
-
-    useSystem('tkn')
-
-    const systemValue = useRecoilValue(system)
-
-    const changeSystemState = useSetRecoilState(changeSystem)
+export const ContextAPIDemo = () => {
+    const systemContext = useGlobalContext()
 
     const toogleSystem = () => {
-        if (systemValue === 'agt') {
-            changeSystemState('tkn')
-        } else {
-            changeSystemState('agt')
+        if (systemContext.system === 'agt') systemContext.setSystem('tkn')
+        else {
+            systemContext.setSystem('agt')
         }
     }
 
-    console.log('Content render', systemValue)
     return (
         <>
             <h1>Demo Recoil</h1>

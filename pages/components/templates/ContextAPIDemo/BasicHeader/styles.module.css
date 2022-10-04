@@ -1,0 +1,11 @@
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  background: #555;
+}
+
+.heading {
+  margin: 0 auto;
+}

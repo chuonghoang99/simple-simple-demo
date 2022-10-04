@@ -1,0 +1,33 @@
+.header {
+  height: 45px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.container {
+  padding-left: 200px;
+}
+
+.aside {
+  width: 200px;
+  height: calc(100vh - 45px);
+  position: fixed;
+  top: 45px;
+  left: 0;
+  z-index: 2;
+}
+
+.content {
+  padding-top: 45px;
+  min-height: calc(100vh - 180px);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  bottom: 0;
+}

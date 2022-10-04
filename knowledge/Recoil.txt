@@ -1,0 +1,41 @@
+# Recoil
+
+Recoil chính là 1 thư viện dùng để quản lý state của React,
+
+*****RecoilRoot*****
+    + Bọc bên ngoài để có thể sử dụng recoil bên trong nó. (Thường bọc ngoài App để)
+
+    + Multiple RecoilRoot độc lâp => state/atom sẽ độc lập
+
+    + Recoil Root mà nested
+    If you want to use Nested RecoilRoot, & need to keep in sync specific child recoil atom with Parent Recoil, below way can help
+        Parent =  () => {
+        return (<RecoilRoot>
+        <App/>
+        </RecoilRoot>);
+        };
+
+        App = ()=> {
+        const atomValue = useRecoilValue(atom);
+
+        return (
+        <RecoilRoot>
+        <StateSync parentvalue={atomValue}/>
+            <Children elments/>
+        </RecoilRoot>);
+        }
+
+        // StateSync will update child atom value whenever parent atom value changes
+        StateSync = ({parentValue})=> {
+        const setChildAtomValue = useSetRecoilState(atom);
+        useEffect(()=> {
+        setChildAtomValue (parentValue);
+        },[parentValue]);
+        return <React.Fragment/>
+        }
+
+-   Atoms
+    Giống như state của component => rộng hơn, state của recoilRoot (state thay bên trong RecoilRoot thay đổi => tất 
+    cả component sử dụng atom đều tự động re-render)
+
+-   Selectors : func biến đổi state -> state mới
